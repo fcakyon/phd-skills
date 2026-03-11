@@ -1,0 +1,75 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/scripts/citation_guard.sh"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/scripts/latex_check.sh"
+          }
+        ]
+      },
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/scripts/visual_check.sh"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "prompt",
+            "prompt": "Review the assistant's final response for research integrity. Check: (1) UNVERIFIED CLAIMS: Are factual claims backed by sources actually read in this session, not assumed? Are numerical values traced to a specific file or output? (2) WRONG TARGET: Did the assistant confirm it's operating on the correct file, directory, data split, or subset before modifying or analyzing? (3) SCOPE CREEP: Did the assistant only change what was asked, without removing content, adding unrequested features, or making assumptions about intent? (4) DROPPED REQUESTS: Was every part of the user's message addressed, including verification questions alongside action requests? (5) ASSUMPTIONS AS FACTS: Are domain-specific claims (technical concepts, method behaviors) verified against code or documentation rather than assumed? If any check fails, instruct the assistant to flag the specific issue to the user before finalizing."
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "prompt",
+            "prompt": "If the user's message is very short (under 5 words), ambiguous, or could be interpreted multiple ways, instruct the assistant to briefly confirm its interpretation before taking any destructive or costly action (file modifications, uploads, API calls). For clear, unambiguous requests, proceed normally without confirmation."
+          }
+        ]
+      }
+    ],
+    "Notification": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/scripts/notify.sh"
+          }
+        ]
+      }
+    ],
+    "PreCompact": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/scripts/save_state.sh"
+          }
+        ]
+      }
+    ]
+  }
+}
