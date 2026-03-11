@@ -1,0 +1,14 @@
+{
+  "name": "phd-skills",
+  "version": "1.0.0",
+  "description": "Research integrity plugin for Claude Code — paper auditing, citation verification, experiment analysis, and methodology-first skills for academic workflows.",
+  "keywords": [
+    "research",
+    "academic",
+    "phd",
+    "paper-writing",
+    "citations",
+    "experiments",
+    "latex"
+  ]
+}

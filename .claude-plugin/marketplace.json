@@ -1,0 +1,25 @@
+{
+  "name": "phd-skills",
+  "description": "Research integrity plugin for Claude Code — paper auditing, citation verification, experiment analysis, and methodology-first skills for academic workflows.",
+  "owner": {
+    "name": "Fatih Cagatay Akyon",
+    "url": "https://scholar.google.com/citations?user=RHGyDE0AAAAJ"
+  },
+  "repository": "https://github.com/fcakyon/phd-skills",
+  "license": "MIT",
+  "keywords": [
+    "research",
+    "academic",
+    "phd",
+    "paper-writing",
+    "citations",
+    "experiments",
+    "latex"
+  ],
+  "plugins": [
+    {
+      "name": "phd-skills",
+      "source": "."
+    }
+  ]
+}
