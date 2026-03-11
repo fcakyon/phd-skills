@@ -51,43 +51,43 @@ claude plugin install fcakyon/phd-skills
 
 | Command | What it does |
 |---------|-------------|
-| `/phd-skills:xray` | Audit paper against code and data (5 parallel dimensions) |
-| `/phd-skills:factcheck` | Verify BibTeX entries and cited claims against DBLP |
-| `/phd-skills:gaps <topic>` | Literature gap analysis with web confirmation |
-| `/phd-skills:fortify [venue]` | Select strongest ablations + anticipate reviewer questions |
-| `/phd-skills:setup` | Interactive onboarding (notifications, allowlist, LaTeX) |
-| `/phd-skills:help` | Show all features at a glance |
+| [`/phd-skills:xray`](commands/xray.md) | Audit paper against code and data (5 parallel dimensions) |
+| [`/phd-skills:factcheck`](commands/factcheck.md) | Verify BibTeX entries and cited claims against DBLP |
+| [`/phd-skills:gaps <topic>`](commands/gaps.md) | Literature gap analysis with web confirmation |
+| [`/phd-skills:fortify [venue]`](commands/fortify.md) | Select strongest ablations + anticipate reviewer questions |
+| [`/phd-skills:setup`](commands/setup.md) | Interactive onboarding (notifications, allowlist, LaTeX) |
+| [`/phd-skills:help`](commands/help.md) | Show all features at a glance |
 
 ### Skills (auto-trigger — just describe what you need)
 
 | When you say... | Skill activates |
 |-----------------|----------------|
-| "design an ablation study" | Experiment Design |
-| "find related papers on X" | Literature Research |
-| "write the methods section" | Paper Writing |
-| "check if my numbers match the code" | Paper Verification |
-| "analyze dataset bias" | Dataset Curation |
-| "prepare code for open-source release" | Research Publishing |
-| "what will reviewers ask about this?" | Reviewer Defense |
-| "setup latex for CVPR" | LaTeX Setup |
+| "design an ablation study" | [Experiment Design](skills/experiment-design/SKILL.md) |
+| "find related papers on X" | [Literature Research](skills/literature-research/SKILL.md) |
+| "write the methods section" | [Paper Writing](skills/paper-writing/SKILL.md) |
+| "check if my numbers match the code" | [Paper Verification](skills/paper-verification/SKILL.md) |
+| "analyze dataset bias" | [Dataset Curation](skills/dataset-curation/SKILL.md) |
+| "prepare code for open-source release" | [Research Publishing](skills/research-publishing/SKILL.md) |
+| "what will reviewers ask about this?" | [Reviewer Defense](skills/reviewer-defense/SKILL.md) |
+| "setup latex for CVPR" | [LaTeX Setup](skills/latex-setup/SKILL.md) |
 
 ### Agents (Claude delegates automatically)
 
 | Agent | What it does | Special |
 |-------|-------------|---------|
-| `paper-auditor` | Cross-checks paper claims vs code and data | Runs in isolated worktree, remembers patterns across sessions |
-| `experiment-analyzer` | Analyzes results from wandb/neptune/local/any format | Can schedule monitoring via cron, sends SSH notifications |
+| [`paper-auditor`](agents/paper-auditor.md) | Cross-checks paper claims vs code and data | Runs in isolated worktree, remembers patterns across sessions |
+| [`experiment-analyzer`](agents/experiment-analyzer.md) | Analyzes results from wandb/neptune/local/any format | Can schedule monitoring via cron, sends SSH notifications |
 
 ### Research Guardrails (run silently — you never invoke these)
 
 | What it catches | Real incident that inspired it |
 |-----------------|-------------------------------|
-| Unverified claims, wrong targets, scope creep, dropped requests, assumptions stated as facts | Claude removed introduction novelty claims, analyzed wrong data split, dropped a verification question mid-commit |
-| Ambiguous short messages before costly actions | "done?" misread as "dont?", launched unwanted upload |
-| Missing citation verification when editing .tex/.bib | Claude propagated unverified author names and venue info |
-| LaTeX compilation errors after .tex edits | Errors compounded across multiple edits before being caught |
-| Unreviewed generated images/figures | Claude analyzed metrics but never looked at the actual plots |
-| Research state loss before context overflow | Long research sessions lost context, leading to rushed conclusions |
+| [Unverified claims, wrong targets, scope creep, dropped requests, assumptions stated as facts](hooks/hooks.json) | Claude removed introduction novelty claims, analyzed wrong data split, dropped a verification question mid-commit |
+| [Ambiguous short messages before costly actions](hooks/hooks.json) | "done?" misread as "dont?", launched unwanted upload |
+| [Missing citation verification when editing .tex/.bib](scripts/citation_guard.sh) | Claude propagated unverified author names and venue info |
+| [LaTeX compilation errors after .tex edits](scripts/latex_check.sh) | Errors compounded across multiple edits before being caught |
+| [Unreviewed generated images/figures](scripts/visual_check.sh) | Claude analyzed metrics but never looked at the actual plots |
+| [Research state loss before context overflow](scripts/save_state.sh) | Long research sessions lost context, leading to rushed conclusions |
 
 ---
 
