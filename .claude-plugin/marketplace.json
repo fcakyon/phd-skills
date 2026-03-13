@@ -16,7 +16,7 @@
         "path": "plugin"
       },
       "description": "Research integrity plugin for Claude Code — paper auditing, citation verification, experiment analysis, and methodology-first skills for academic workflows.",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "author": {
         "name": "Fatih Cagatay Akyon"
       },

@@ -1,5 +1,4 @@
 ---
-name: gaps
 description: >
   Literature gap analysis with web confirmation. Takes a research
   topic or question and maps existing work to find what's missing.

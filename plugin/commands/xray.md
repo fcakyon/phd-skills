@@ -1,5 +1,4 @@
 ---
-name: xray
 description: >
   Multi-dimensional paper audit — spawns 5 parallel sub-agents to check
   numerical accuracy, terminology consistency, code-paper alignment,

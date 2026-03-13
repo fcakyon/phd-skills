@@ -41,7 +41,7 @@ project knowledge across sessions.
 
 ```
 claude plugin marketplace add fcakyon/phd-skills
-claude plugin install phd-skills
+claude plugin install phd-skills@phd-skills
 ```
 
 ---

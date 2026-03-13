@@ -1,5 +1,4 @@
 ---
-name: fortify
 description: >
   Select strongest ablations and anticipate reviewer questions.
   Reads paper and experiment results to prepare for peer review.

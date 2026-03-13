@@ -1,5 +1,4 @@
 ---
-name: help
 description: >
   Show all phd-skills features, commands, skills, agents, and hooks
   at a glance. Use for in-session discoverability.

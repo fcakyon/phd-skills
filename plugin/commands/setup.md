@@ -1,5 +1,4 @@
 ---
-name: setup
 description: >
   Interactive onboarding wizard — configure notifications, CLI allowlist,
   research-specific CLAUDE.md rules, and LaTeX environment.

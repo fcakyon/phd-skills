@@ -1,5 +1,4 @@
 ---
-name: factcheck
 description: >
   Verify BibTeX entries and cited claims against DBLP and web sources.
   Checks author names, venues, years, and specific numerical claims.
