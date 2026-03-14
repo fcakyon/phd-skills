@@ -18,22 +18,15 @@ PhD research. Every guardrail in this plugin traces to a real mistake.
 
 ## Why This Plugin Exists
 
-I use Claude Code daily for my PhD — writing papers, running experiments,
-verifying results, managing citations. It's incredibly powerful, but it
+I use Claude Code daily for my PhD. It's powerful, but it
 makes research-specific mistakes that cost hours:
 
-- It stated my "detached tag head" worked differently than it actually did
 - It typed "done?" as "dont?" and launched an unwanted upload of thousands of files
-- It silently removed novelty claims from my introduction during a "small edit"
 - It analyzed my full dataset when I asked for a specific 4k/2k/2k split
 - It claimed a test covered a bug it had never actually verified
 - It never once looked at a figure it generated — just trusted the numbers
 
 Other plugins give you more commands. **This plugin gives you guardrails.**
-
-6 silent hooks catch these exact failure patterns before they cost you time.
-8 skills encode research methodology — not scripts. 2 agents build
-project knowledge across sessions.
 
 ---
 
@@ -43,6 +36,25 @@ project knowledge across sessions.
 claude plugin marketplace add fcakyon/phd-skills
 claude plugin install phd-skills@phd-skills
 ```
+
+Then run `/phd-skills:setup` inside Claude Code to configure notifications, LaTeX, and allowlist.
+
+---
+
+## Usage
+
+Open Claude Code in your paper directory, then:
+
+- `/phd-skills:xray` — audit paper against code and data across 5 dimensions, get prioritized fixes
+- `/phd-skills:factcheck` — verify all BibTeX entries and cited claims against DBLP
+- `/phd-skills:fortify CVPR` — anticipate reviewer questions, rank ablations, and suggest paper improvements
+- `/phd-skills:gaps neural architecture search` — find what's missing in the literature
+- `/loop 30m check experiment logs, notify me if metrics beat the baseline or if loss starts to diverge`
+- `"check if my numbers match the code"` — skills auto-trigger, no slash command needed
+- `"make code publish ready"` — prepares code for open-source release with license, docs, and reproducibility checks
+
+After running `/phd-skills:setup`, all Claude Code notifications (task completion,
+background agents) are forwarded to your configured service (ntfy/Slack/email).
 
 ---
 
@@ -65,7 +77,7 @@ claude plugin install phd-skills@phd-skills
 |-----------------|----------------|
 | "design an ablation study" | [Experiment Design](plugin/skills/experiment-design/SKILL.md) |
 | "find related papers on X" | [Literature Research](plugin/skills/literature-research/SKILL.md) |
-| "write the methods section" | [Paper Writing](plugin/skills/paper-writing/SKILL.md) |
+| "review my methods section for consistency" | [Paper Verification](plugin/skills/paper-writing/SKILL.md) |
 | "check if my numbers match the code" | [Paper Verification](plugin/skills/paper-verification/SKILL.md) |
 | "analyze dataset bias" | [Dataset Curation](plugin/skills/dataset-curation/SKILL.md) |
 | "prepare code for open-source release" | [Research Publishing](plugin/skills/research-publishing/SKILL.md) |
@@ -89,17 +101,6 @@ claude plugin install phd-skills@phd-skills
 | [LaTeX compilation errors after .tex edits](plugin/scripts/latex_check.sh) | Errors compounded across multiple edits before being caught |
 | [Unreviewed generated images/figures](plugin/scripts/visual_check.sh) | Claude analyzed metrics but never looked at the actual plots |
 | [Research state loss before context overflow](plugin/scripts/save_state.sh) | Long research sessions lost context, leading to rushed conclusions |
-
----
-
-## Quick Start
-
-```
-/phd-skills:setup                    # Configure once
-/phd-skills:xray                     # Audit your paper
-"design an ablation study"           # Skills auto-trigger
-"audit my paper against the code"    # Spawns paper-auditor agent
-```
 
 ---
 
