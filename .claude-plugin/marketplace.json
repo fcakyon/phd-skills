@@ -5,7 +5,7 @@
     "url": "https://scholar.google.com/citations?user=RHGyDE0AAAAJ"
   },
   "metadata": {
-    "description": "Research integrity plugin for Claude Code — paper auditing, citation verification, experiment analysis, and methodology-first skills for academic workflows."
+    "description": "Catch AI mistakes before they cost weeks of compute. Reproduce papers from arxiv. Debug runs evidence-first. Compare experiments at the right epoch. Launch with discipline."
   },
   "plugins": [
     {
@@ -15,17 +15,26 @@
         "url": "https://github.com/fcakyon/phd-skills.git",
         "path": "plugin"
       },
-      "description": "Research integrity plugin for Claude Code — paper auditing, citation verification, experiment analysis, and methodology-first skills for academic workflows.",
-      "version": "1.2.0",
+      "description": "Catch AI mistakes before they cost weeks of compute. Reproduce papers from arxiv. Debug runs evidence-first. Compare experiments at the right epoch. Launch with discipline.",
+      "version": "1.3.0",
       "author": {
         "name": "Fatih Cagatay Akyon"
       },
       "homepage": "https://github.com/fcakyon/phd-skills",
       "repository": "https://github.com/fcakyon/phd-skills",
       "license": "MIT",
-      "keywords": ["research", "academic", "phd", "paper-writing", "citations", "experiments", "latex"],
+      "keywords": [
+        "research",
+        "academic",
+        "phd",
+        "paper-reproduction",
+        "debugging",
+        "experiment-analysis",
+        "citations",
+        "latex"
+      ],
       "category": "productivity",
-      "tags": ["research", "academic", "latex"]
+      "tags": ["research", "academic", "latex", "ml-experiments"]
     }
   ]
 }
