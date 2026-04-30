@@ -5,7 +5,7 @@ verification, experiment analysis, and methodology-first skills for
 academic workflows.
 
 Built by [Fatih Cagatay Akyon](https://scholar.google.com/citations?user=RHGyDE0AAAAJ)
-(1300+ citations, 7 patents) after 200+ Claude Code sessions, tens of
+(1500+ citations, 7 patents) after 300+ Claude Code sessions, tens of
 critical AI mistakes caught the hard way, and thousands of hours of
 PhD research. Every guardrail in this plugin traces to a real mistake.
 
@@ -130,3 +130,7 @@ background agents) are forwarded to your configured service (ntfy/Slack/email).
 MIT — use it, fork it, adapt it to your research.
 
 Built with frustration and care during a PhD at METU.
+
+## Thank you for the support!
+
+[![Star History Chart](https://api.star-history.com/svg?repos=fcakyon/phd-skills&type=Date)](https://www.star-history.com/#fcakyon/phd-skills&Date)
