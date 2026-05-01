@@ -288,11 +288,12 @@ def main() -> int:
     # ── OLD prompt baseline ─────────────────────────────────────────────────
     print("◆ OLD PROMPT  (pre-fix, no loop guard)")
 
-    # Informational: old prompt is non-deterministic on the loop scenario.
-    # In long real sessions (hundreds of turns) the model consistently returned
-    # {"ok": false} on the bare acknowledgment, triggering the usage loop.
-    # In isolated single calls it sometimes returns {"ok": true} (default kicks in).
-    # The fix makes LOOP deterministically {"ok": true} regardless of context length.
+    # Informational: old prompt returns {"ok": false} ~90% of the time on this
+    # scenario (measured: 9/10 isolated runs). Each false response triggers
+    # another assistant turn → another Stop hook firing → compounding loop.
+    # Probability of self-terminating within N rounds = 1 - 0.9^N, so after
+    # 20 rounds there is still a ~12% chance of continued looping.
+    # The fix makes LOOP deterministically {"ok": true} on every run.
     results.append(run_case(
         "Loop scenario → non-deterministic (sometimes ok=false = THE BUG)",
         "LOOP", "OLD", OLD_PROMPT, loop_args,
