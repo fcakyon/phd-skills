@@ -1,6 +1,6 @@
 {
   "name": "phd-skills",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "Catch AI mistakes before they cost weeks of compute. Reproduce papers from arxiv. Debug runs evidence-first. Compare experiments at the right epoch. Launch with discipline.",
   "keywords": [
     "research",
