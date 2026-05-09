@@ -20,6 +20,6 @@ if ! echo "$command" | grep -qE "$destructive_pattern"; then
 fi
 
 cat << 'EOF'
-{"decision": "allow", "reason": "DESTRUCTIVE PATH GUARD: this command is destructive (rm/mv/dd/truncate/force-push/reset-hard/clean) and references an absolute path. Before running, verify each path actually exists and is what you think it is, `ls -la <path>` or `git status` first. The most common failure mode is acting on a path recalled from memory that doesn't exist or contains different content than expected."}
+{"hookSpecificOutput":{"hookEventName":"PreToolUse","permissionDecision":"allow","permissionDecisionReason":"DESTRUCTIVE PATH GUARD: this command is destructive (rm/mv/dd/truncate/force-push/reset-hard/clean) and references an absolute path. Before running, verify each path actually exists and is what you think it is, `ls -la <path>` or `git status` first. The most common failure mode is acting on a path recalled from memory that doesn't exist or contains different content than expected."}}
 EOF
 exit 0

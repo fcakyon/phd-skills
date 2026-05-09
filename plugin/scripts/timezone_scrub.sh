@@ -65,7 +65,7 @@ if [ -z "$mismatched" ]; then
 fi
 
 cat << EOF
-{"decision": "allow", "reason": "TIMEZONE SCRUB: ${file_path} contains TZ tokens (${mismatched}) that don't match your system timezone (${sys_tz}). Status updates and ETAs in personal docs should normally use one canonical TZ. If the TZ token is correct (e.g. quoting a remote log), wrap the timestamp in backticks or a fenced code block to mark it as verbatim."}
+{"hookSpecificOutput":{"hookEventName":"PostToolUse","additionalContext":"TIMEZONE SCRUB: ${file_path} contains TZ tokens (${mismatched}) that don't match your system timezone (${sys_tz}). Status updates and ETAs in personal docs should normally use one canonical TZ. If the TZ token is correct (e.g. quoting a remote log), wrap the timestamp in backticks or a fenced code block to mark it as verbatim."}}
 EOF
 
 exit 0

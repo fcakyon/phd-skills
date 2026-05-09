@@ -59,4 +59,4 @@ Consider starting a fresh session for complex tasks to avoid
 rushed conclusions from compressed context.
 ENDSTATE
 
-echo '{"decision": "allow", "reason": "CONTEXT LIMIT: research state saved to ~/.claude/research-state.md including recent hosts, tmux sessions, and run paths from the transcript. Long sessions lead to compressed context and potentially rushed conclusions. Consider starting a fresh session if you have complex remaining tasks."}'
+exit 0

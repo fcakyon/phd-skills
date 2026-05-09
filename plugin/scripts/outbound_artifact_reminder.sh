@@ -18,7 +18,7 @@ outbound_pattern='(slack|gh\s+(issue|pr|release)|hooks\.slack\.com|teams\.micros
 
 if echo "$command" | grep -qiE "$outbound_pattern"; then
   cat << 'EOF'
-{"decision": "allow", "reason": "OUTBOUND ARTIFACT: this command sends content to a teammate-facing channel. Before submitting, scan the body for any commands, file paths, version strings, or numeric claims. For each, confirm it was produced by a tool output earlier in this session (ls, find, git, Read, etc.). Anything recalled from memory should be labeled 'unverified template' or probed first. Teammates act on what you send."}
+{"hookSpecificOutput":{"hookEventName":"PreToolUse","permissionDecision":"allow","permissionDecisionReason":"OUTBOUND ARTIFACT: this command sends content to a teammate-facing channel. Before submitting, scan the body for any commands, file paths, version strings, or numeric claims. For each, confirm it was produced by a tool output earlier in this session (ls, find, git, Read, etc.). Anything recalled from memory should be labeled 'unverified template' or probed first. Teammates act on what you send."}}
 EOF
   exit 0
 fi
