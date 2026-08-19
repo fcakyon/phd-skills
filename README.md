@@ -138,7 +138,7 @@ MIT. Use it, fork it, adapt it to your research.
 
 ## Thank you for the support!
 
-[![Star History Chart](https://api.star-history.com/svg?repos=fcakyon/phd-skills&type=Date)](https://www.star-history.com/#fcakyon/phd-skills&Date)
+[![Star History Chart](https://star-history.dera.page/svg?repos=fcakyon/phd-skills&type=Date)](https://star-history.dera.page/#fcakyon/phd-skills&Date)
 
 ## Contributors
 
