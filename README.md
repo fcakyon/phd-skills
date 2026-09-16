@@ -3,7 +3,7 @@
 Catch AI mistakes before they cost weeks of compute. Reproduce papers from arxiv. Debug runs evidence-first. Compare experiments at the right epoch. Launch with discipline.
 
 Built by [Fatih Cagatay Akyon](https://scholar.google.com/citations?user=RHGyDE0AAAAJ)
-(1500+ citations, 7 patents) after 300+ Claude Code sessions, tens of
+(2000+ citations, 5 patents) after 300+ Claude Code sessions, tens of
 critical AI mistakes caught the hard way, and thousands of hours of
 PhD research. Every guardrail in this plugin traces to a real mistake.
 
